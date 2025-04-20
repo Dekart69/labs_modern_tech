@@ -1,0 +1,14 @@
+<h1 class="h">Напишіть те що у вас на думці</h1>
+<form [formGroup]="postForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="title">Title</label>
+        <input id="title" formControlName="title" />
+    </div>
+
+    <div>
+        <label for="content">Content</label>
+        <textarea id="content" formControlName="content"></textarea>
+    </div>
+
+    <button type="submit" [disabled]="postForm.invalid">Submit</button>
+</form>

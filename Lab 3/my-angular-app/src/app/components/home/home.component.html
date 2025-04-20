@@ -1,0 +1,21 @@
+<div class="home-cont">
+    @if(!isAuthorized) {
+    <h1>Привіт! Щоб написати пост потрібно зареєструватися на нашій платформі!</h1>
+    <div class="btn-cont">
+        <button class="btn" (click)="redirectAuth()">Вхід</button>
+    </div>
+    } @else {
+    <h1>Написати свій пост</h1>
+    <div class="btn-cont">
+        <button class="btn" (click)="writePost()">Написати</button>
+    </div>
+    }
+    <div class="posts-container">
+        @for(post of posts; track $index) {
+        <div class="post">
+            <h2>{{post.title}}</h2>
+            <span>{{post.content}}</span>
+        </div>
+        }
+    </div>
+</div>
